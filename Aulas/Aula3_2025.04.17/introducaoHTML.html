@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minha Página</title>
+    <link rel="stylesheet" href="styles.css">
+    
+</head>
+<body class="corpoPagina">
+    <!-- BOTÃO COM MENSAGEM A SER APRESENTADA VIA SCRIPT-->
+    <h1 class="titulo">Bem-vindo à minha página!</h1>
+    <p>Este é um parágrafo de exemplo.</p>
+    <button id="botao" class="btn">Click me</button>
+    <p id="mensagem"></p>
+
+    <!-- FORMULARIO COM MENSAGEM A SER APRESENTADA VIA SCRIPT-->
+    <form id="formulario">
+        <input type="text" id="nome" placeholder="Insira o seu nome"> 
+        <input type="number" id="idade" placeholder="Insira a sua idade"> 
+        <button type="submit">Enviar</button>
+    </form>
+    <p id="output"></p>
+
+    <!-- LISTA DE TAREFAS DINAMICA-->
+    <br>
+    <br>
+
+    <input type="text" id="tarefaInput" placeholder="Insira uma nova tarefa"> 
+    <button id="adicionarBtn">Adicionar</button>
+    <ul id="listaTarefas"></ul>
+
+    <script>
+
+        // script para mensagem do botao
+        document.getElementById('botao').addEventListener('click', function() {
+            document.getElementById('mensagem').innerText = 'Você clicou no botão!';
+        });
+
+        // script para mensagem do formulario
+
+        document.getElementById('formulario').addEventListener('submit', function(e) {
+            e.preventDefault();  // Evita que a página seja recarregada
+        
+            const nome = document.getElementById('nome').value;
+            const idade = document.getElementById('idade').value;
+        
+            // Exibe a mensagem
+            document.getElementById('output').innerText = `Olá ${nome}! Tu tens ${idade} anos.`;
+        });
+
+        
+
+        // script para lista de tarefas
+
+        document.getElementById('adicionarBtn').addEventListener('click', function() {
+            const textoTarefa = document.getElementById('tarefaInput').value;
+        
+            if (textoTarefa.trim() === "") {
+                alert("Por favor, insira uma tarefa!");
+                return;
+            }
+        
+            // Criar elemento <li> para a tarefa
+            const li = document.createElement('li');
+            li.innerText = textoTarefa;
+        
+            // Criar botão para remover
+            const btnRemover = document.createElement('button');
+            btnRemover.innerText = 'X';
+            btnRemover.addEventListener('click', function() {
+                li.remove();
+            });
+          
+            li.appendChild(btnRemover); // = <li>nomeTarefa<button>X</button></li>
+            document.getElementById('listaTarefas').appendChild(li);
+        
+            // Limpar o campo de input
+            document.getElementById('tarefaInput').value = '';
+        });
+        
+
+
+    </script>
+    
+
+
+</body>
+
+</html>
