@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Notícias Espaciais</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>🚀 Notícias Espaciais</h1>
+    <p>Fica a par das últimas novidades do espaço!</p>
+  </header>
+
+  <main class="grid-container">
+    <!-- COLUNA ESQUERDA: TOP 3 -->
+    <aside id="topNews" class="results-container">
+      <h2>📰 Top 3 Notícias Recentes</h2>
+    </aside>
+
+    <!-- COLUNA DIREITA: PESQUISA + RESULTADOS -->
+    <section class="right-side">
+      <form id="searchForm">
+        <input
+          type="text"
+          id="searchInput"
+          placeholder="🔍 Escreve uma palavra-chave..."
+          required
+        />
+        <button type="submit">Pesquisar</button>
+      </form>
+
+      <section id="results" class="results-container">
+        <p>Escreve algo e carrega em "Pesquisar" para ver notícias.</p>
+      </section>
+    </section>
+  </main>
+
+  <footer>
+    <p>Feito com 💙 para o projeto final</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+

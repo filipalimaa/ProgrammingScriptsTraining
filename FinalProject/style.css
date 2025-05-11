@@ -1,0 +1,133 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    color: #f4f4f4;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  header {
+    text-align: center;
+    padding: 2rem 1rem;
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+  
+  header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    color: #4fc3f7;
+  }
+  
+  header p {
+    font-size: 1.1rem;
+    color: #ccc;
+  }
+  
+  main {
+    flex: 1;
+    padding: 2rem;
+    max-width: 800px;
+    margin: auto;
+  }
+  
+  form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 2rem;
+  }
+  
+  input[type="text"] {
+    flex: 1;
+    padding: 12px;
+    font-size: 16px;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
+  }
+  
+  button {
+    background-color: #4fc3f7;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  button:hover {
+    background-color: #03a9f4;
+  }
+  
+  .results-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .results-container h2 {
+    font-size: 1.5rem;
+    color: #4fc3f7;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #4fc3f766;
+    padding-bottom: 0.5rem;
+  }
+  
+  .results-container article {
+    background-color: #ffffff0d;
+    border-left: 5px solid #4fc3f7;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  }
+  
+  .results-container h3 {
+    font-size: 1.2rem;
+    color: #ffffff;
+  }
+  
+  .results-container a {
+    color: #81d4fa;
+    text-decoration: none;
+  }
+  
+  .results-container a:hover {
+    text-decoration: underline;
+  }
+  
+  footer {
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.9rem;
+    background-color: rgba(0, 0, 0, 0.3);
+    color: #aaa;
+  }
+  
+  .grid-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 2rem;
+    align-items: start;
+  }
+  
+  .right-side {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  @media (max-width: 768px) {
+    .grid-container {
+      grid-template-columns: 1fr;
+    }
+  }
+  
