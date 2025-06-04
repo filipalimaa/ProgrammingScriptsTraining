@@ -1,0 +1,32 @@
+<!--    
+    
+https://api.agify.io/?name=bruno
+
+
+{
+  "name": bruno", 
+  "age": 58, 
+  "count": 17611
+}
+
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="verIdade()">Ver idade</button>
+    <p id="resultado"></p>  
+
+    <script>
+        async function verIdade() {
+            const resposta = await fetch("https://api.agify.io/?name=bruno");
+            const dados = await resposta.json();
+            document.getElementById("resultado").innerText = `Idade estimada: ${dados.age}`;
+          }
+    </script>
+</body>
+</html>

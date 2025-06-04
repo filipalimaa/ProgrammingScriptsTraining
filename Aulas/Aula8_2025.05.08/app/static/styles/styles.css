@@ -1,0 +1,203 @@
+/* Estilos para o corpo do site*/
+
+body{
+    font-family: "Roboto", sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+}
+
+/*Estilizar o cabeçalho */
+#header {
+    background-color: #c2ecff;
+    color: #fff;
+    padding: 20px 0;
+    display: flex; /*alinhar numa linha os itens*/
+    justify-content: space-between; /* Espaço entre os itens*/
+    align-items: center; /* centraliza verticalmente*/
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+
+}
+
+/*Estilizar o logotipo*/
+#logo {
+    width: 50px; 
+    transition: transform 0.3s ease;
+}
+
+#logo:hover{
+    transform: scale(1.1);
+}
+
+#menu{
+    display:flex;
+    list-style-type: none;
+    margin-right:20px;
+}
+
+#menu li{
+    margin-right:20px;
+} 
+
+#menu li a{
+    color: #0073c0;
+    text-decoration: none;
+    font-size:15px;
+    transition: color 0.3s ease, font-size 0.3s ease;
+} 
+
+#menu li a:hover{
+    font-size:16px;
+    color: #00263f;
+}
+
+
+#app{
+    max-width: 800px;
+    margin: 0 auto;
+    margin-top: 10px;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+#search-container{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    gap:10px;
+    
+}
+
+#search-container input[type="text"]{
+    flex:1;
+    padding: 10px;
+    font-size: 16px;
+    border: 0.5px solid #ccc;
+    margin:0;
+    border-radius:5px;
+}
+
+#search-container input[type="text"]:focus{
+    outline:none;
+    border-color: #0073c0;
+}
+
+#search-container button{
+    padding: 10px 20px;
+    background-color: #00263f;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    /*Transições suaves na cor de fundo e no tamanho*/
+    transition: background-color 0.3s ease, transform 0.2s ease; 
+    margin: 20px auto 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /*sombra suave ao botao*/
+}
+
+#search-container button:hover{
+    background-color: #0073c0;
+    transform:translateY(-2px); /*Elevação subtil*/
+}
+
+#searchIcon{
+    width:15px;
+    height: 15px;
+}
+
+/* Estilização para a barra de carregamento e tambem mensagem de erro */
+
+#loading{
+    display:none;
+    width:100%;
+    height:5px; /* Altura da barra de loading*/
+    background-color: #00a30b;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+    animation: loadingAnimation 3s linear infinite;
+}
+
+#loading::after{
+    content:'';
+    display: block;
+    width:0; /*Inicializada com a largura de zero */
+    background-color: #00a30b;
+    position: relative;
+}
+
+/* Keyframes da animação da barra de carregamento */
+@keyframes loadingAnimation {
+    0% {
+        width: 0; /* Começar com a largura de zero */
+    }
+    100% {
+        width:100%; /*Atingir a largura maxima */
+    }
+    
+}
+
+#error{
+    display: none;
+    color:#ff0000;
+    font-size: 16px;
+    text-align:center;
+}
+
+/*Estilização dos resultados da pesquisa*/
+#results{
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+#results li{
+    background-color: #e6e6e6;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+#results li:hover {
+    background-color: #838383;
+}
+
+/* Estilização dos detalhes dos filmes*/
+#details{
+    display: none;
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #ececec;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    
+}
+#details h2{
+    color: #00263f;
+    margin-bottom: 10px;
+}
+
+#details p{
+    margin-bottom: 10px;
+}
+
+#details img{
+    max-width: 100%;
+    height: auto;
+    margin-top:10px;
+}
+/* Estilos para o rodape*/
+#footer{
+    background-color: #838383;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    transition: opacity 0.3s;
+    
+}

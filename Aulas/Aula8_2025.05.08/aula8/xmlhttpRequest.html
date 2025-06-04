@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX com XMLHttpRequest</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        #resultado {
+            margin-top: 20px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Exemplo de AJAX com XMLHttpRequest</h1>
+        <button onclick="fazerRequisicao()">Carregar Dados</button>
+        <div id="resultado"></div>
+    </div>
+
+    <script>
+        function fazerRequisicao() {
+            // 1. Criar o objeto XMLHttpRequest
+            let xhr = new XMLHttpRequest();
+
+            // 2. Configurar a requisição
+            xhr.open('GET', 'dados.json', true); // Método, URL, Assíncrono (true)
+
+            // 3. Lidar com a resposta quando ela chegar
+            xhr.onload = function() {
+                if (xhr.status === 200) { // Sucesso (código 200)
+                    let dados = JSON.parse(xhr.responseText); // Converter JSON para objeto JS
+                    let resultadoDiv = document.getElementById('resultado');
+                    resultadoDiv.innerHTML = '<h2>Dados Recebidos:</h2>';
+                    resultadoDiv.innerHTML += '<p>Nome: ' + dados.nome + '</p>';
+                    resultadoDiv.innerHTML += '<p>Idade: ' + dados.idade + '</p>';
+                } else {
+                    console.error('Erro na requisição. Status: ' + xhr.status);
+                    document.getElementById('resultado').innerHTML = 'Erro ao carregar dados.';
+                }
+            };
+
+            // 4. Lidar com erros
+            xhr.onerror = function() {
+                console.error('Erro de rede.');
+                document.getElementById('resultado').innerHTML = 'Erro de conexão.';
+            };
+
+            // 5. Enviar a requisição
+            xhr.send();
+        }
+    </script>
+</body>
+</html>

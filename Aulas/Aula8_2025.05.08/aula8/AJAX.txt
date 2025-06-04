@@ -1,0 +1,39 @@
+AJAX - ASYNCHRONOUS JAVASCRIPT AND XML
+
+PASSOS DE COMUNICAÇÃO 
+1 Utilizador interage com a pagina 
+2 javascript apanha o dado
+3 javascript faz um pedido fao servidor com fetch()(antigamente usa-se o XMLHTTPRequest)
+4 Servidor(Pyhton) receber, processo e envia uma resposta.
+5 O javascript pegar nessa resposta e mostra-la na página sem recarregar a mesma
+
+
+FECTH API (metodo mais moderno e recomendo)
+
+Como funciona:
+    Cria um objecto JSON
+    Configurar a requisição (metodo http, url, cabeçalhos, etc)
+    Envia a requisição ao servidor 
+    Lida com a resposta quando a mesma chegar(usa eventos para lidar com a mensagem)
+
+
+TIPO DE REQUISIÇÕES
+
+Requisições de HTTP:
+GET - Recuperar dados e apresenta-los
+POST - Enviar dados para o servidor armazenar
+PUT - Atualiza-los dados 
+DELETE - Remover recursos
+
+
+STATUS DE RESPOSTA:
+
+1xx (informativos) - requisições recebidas de processos em andamento
+2xx (sucesso) - 200 - ok, 201 - recursos criados com sucesso
+3xx (redirecionamento) - 301 - movido permanetemente, 302 - found, redirecionamento temporario
+4xx (erros do cliente) - 400 - Bad request, 401 - unauthorized, 404 - Not found
+5xx (erros do servidor) - 500 - Internal server error, 503 - Service unavaible
+
+200 - Sucesso
+404 - Não encontrado
+500 - Erro no servidor

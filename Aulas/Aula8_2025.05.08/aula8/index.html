@@ -1,0 +1,48 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <title>Exemplo AJAX com Python</title>
+  <style>
+    body { font-family: Arial; padding: 20px; }
+    #resposta { margin-top: 10px; font-weight: bold; color: darkgreen; }
+  </style>
+</head>
+<body>
+  <h2>Diz o teu nome</h2>
+  <input type="text" id="nome" placeholder="Escreve o teu nome">
+  <button onclick="enviarNome()">Enviar</button>
+  <p id="resposta"></p>
+
+  <script>
+    // Função que é chamada quando clicamos no botão
+    async function enviarNome() {
+      const nome = document.getElementById("nome").value; // Apanhar o que foi escrito 
+
+       const respostaTexto = document.getElementById("resposta");
+
+      if (nome.trim() === "") {
+        respostaTexto.innerText = "Por favor, escreve algo!";
+        return;
+      }
+
+      try {
+        // Fazemos o pedido AJAX
+        const resposta = await fetch("http://localhost:5000/api", {
+          method: "POST", // Tipo de pedido
+          headers: {
+            "Content-Type": "application/json" // Dizemos que vamos enviar JSON
+          },
+          body: JSON.stringify({ nome: nome }) // Transformação dos dados em JSON
+        });
+
+        const dados = await resposta.json(); // Receber e armazenar a resposta tambem em json
+        respostaTexto.innerText = dados.mensagem; // Mostrar a resposta no HTML
+      } catch (erro) {
+        respostaTexto.innerText = "Erro ao comunicar com o servidor.";
+      }
+    }
+  </script>
+</body>
+</html>

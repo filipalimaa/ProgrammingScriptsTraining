@@ -1,0 +1,24 @@
+.corpoPagina {
+    font-family: Arial, sans-serif;
+    background-color: whitesmoke;
+}
+
+.titulo {
+    color: lightseagreen;
+}
+
+.inputText {
+    border: none;
+    border-bottom: 2px solid lightseagreen;
+    padding: 10px 20px;
+}
+
+.btn {
+    background-color: gray;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+
